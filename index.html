@@ -121,4 +121,91 @@ p{font-size:12px;color:#ccc}
 </div>
 
 </body>
+</html>}
+@keyframes hide{
+  to{opacity:0;visibility:hidden}
+}
+
+/* ===== BODY ===== */
+body{
+  margin:0;
+  font-family:Segoe UI,sans-serif;
+  background:linear-gradient(135deg,#8b0000,#ff2d2d);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#111;
+  width:90%;
+  max-width:360px;
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+  animation:fadeUp .6s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== LOGO ===== */
+.logo img{
+  width:clamp(300px,9vw,300px);
+  margin-bottom:-60px;
+  transition:.3s;
+}
+.logo img:hover{transform:scale(1.08)}
+
+/* ===== BUTTON ===== */
+.btn{
+  display:block;
+  margin-top:12px;
+  padding:14px;
+  background:#ff2d2d;
+  color:white;
+  text-decoration:none;
+  border-radius:14px;
+  font-weight:bold;
+  transition:.25s;
+}
+.btn:hover{transform:scale(1.05)}
+.btn:active{transform:scale(.95)}
+.btn.dark{background:#333}
+
+/* ===== TEXT ===== */
+p{font-size:12px;color:#ccc}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <img src="d.png">
+</div>
+
+<div class="card">
+  <div class="logo">
+    <img src="d.png">
+  </div>
+
+  <h3>Pengumpulan Karya</h3>
+  <p>Detik SMADI</p>
+
+  <a href="https://drive.google.com/drive/mobile/folders/1oanYhfDxtIRmvPjEAAScJs_5Y5DxDQH-" 
+     target="_blank" class="btn">
+    Upload Karya
+  </a>
+
+  <a href="pemenang.html" class="btn dark">
+    Lihat Pemenang
+  </a>
+</div>
+
+</body>
 </html>
