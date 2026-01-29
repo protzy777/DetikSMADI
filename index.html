@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Ayo Kumpulkan Karya</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(135deg,#7a0000,#ff1e1e);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+.card{
+  background:rgba(0,0,0,.8);
+  padding:30px;
+  width:360px;
+  border-radius:22px;
+  animation:fadeUp 1s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.logo{text-align:center;margin-bottom:10px}
+.logo img{width:75px}
+h2{text-align:center;margin:10px 0 5px}
+p{text-align:center;font-size:12px;color:#ddd;margin-bottom:20px}
+.btn{
+  display:block;
+  background:#ff2d2d;
+  padding:14px;
+  text-align:center;
+  border-radius:14px;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn:hover{
+  background:#ff4b4b;
+  transform:scale(1.04);
+}
+.footer{
+  margin-top:18px;
+  text-align:center;
+  font-size:11px;
+  color:#bbb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="logo">
+    <img src="d.png" alt="Logo Sekolah">
+  </div>
+
+  <h2>PORTAL KARYA SISWA</h2>
+  <p>Lomba & Arsip Kreativitas • 2026</p>
+
+  <!-- GANTI LINK FORM DI SINI -->
+  <a href="https://drive.google.com/drive/folders/1oanYhfDxtIRmvPjEAAScJs_5Y5DxDQH-" 
+     target="_blank" 
+     class="btn">
+     Upload Karya
+  </a>
+
+  <div class="footer">
+    © Panitia Nuansa SMADI 2026<br>
+    Tunjukan SMADI pride loe!
+  </div>
+</div>
+
+</body>
+</html>
