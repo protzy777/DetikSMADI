@@ -7,139 +7,175 @@
 
 <style>
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Segoe UI,sans-serif;
   background:linear-gradient(135deg,#8b0000,#ff2d2d);
   color:white;
   min-height:100vh;
-  padding:20px 14px 80px;
+  padding:18px 14px 90px;
 }
 
-/* ===== HEADER ===== */
-.header{
-  text-align:center;
-  margin-bottom:20px;
-  animation:fadeDown .6s ease;
-}
-.header h2{
-  margin:0;
-  font-size:20px;
-}
-.header p{
-  margin:4px 0 0;
-  font-size:12px;
-  color:#ffdada;
-}
+/* HEADER */
+.header{text-align:center;margin-bottom:14px}
+.header h2{margin:0;font-size:22px}
+.header p{font-size:12px;color:#ffd6d6}
 
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-15px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* ===== GRID ===== */
-.grid{
-  max-width:380px;
+/* SLIDER */
+.slider{
+  max-width:360px;
   margin:auto;
-  display:grid;
-  gap:18px;
+  overflow:hidden;
+  position:relative;
+}
+.track{
+  display:flex;
+  transition:.35s ease;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
-  background:rgba(0,0,0,.85);
-  border-radius:18px;
-  padding:12px;
+  min-width:100%;
+  padding:14px;
+}
+.box{
+  background:#111;
+  border-radius:20px;
+  padding:14px;
   text-align:center;
-  animation:fadeUp .6s ease;
-}
-.card:nth-child(1){animation-delay:.1s}
-.card:nth-child(2){animation-delay:.2s}
-.card:nth-child(3){animation-delay:.3s}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
 }
 
-.card img{
+/* FOTO 1:1 */
+.photo{
   width:100%;
-  border-radius:14px;
-  margin-bottom:8px;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  border-radius:16px;
+  margin-bottom:10px;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* ===== BADGE ===== */
+/* TEXT */
+.rank{font-size:18px;font-weight:800;margin-top:4px}
+.name{font-size:13px;color:#ddd}
+
+/* BADGE */
 .badge{
   display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:bold;
   margin-bottom:6px;
-}
-.gold{background:linear-gradient(135deg,#ffd700,#ffb700);color:#000}
-.silver{background:linear-gradient(135deg,#dcdcdc,#bfbfbf);color:#000}
-.bronze{background:linear-gradient(135deg,#cd7f32,#b87333);color:#000}
-
-.name{
-  font-size:13px;
-  color:#eee;
+  font-size:22px;
 }
 
-/* ===== FLOATING BACK BUTTON ===== */
+/* SPECIAL JUARA 1 */
+.gold{
+  border:2px solid gold;
+  box-shadow:0 0 18px rgba(255,215,0,.45);
+}
+
+/* DOTS */
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:10px;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#fff6;
+}
+.dot.active{background:white}
+
+/* BACK FLOAT */
 .back-btn{
   position:fixed;
-  bottom:20px;
+  bottom:18px;
   left:50%;
   transform:translateX(-50%);
   background:#111;
   color:white;
-  padding:14px 22px;
-  border-radius:999px;
+  padding:12px 22px;
+  border-radius:30px;
   text-decoration:none;
   font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-  transition:.25s;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
 }
-.back-btn:hover{transform:translateX(-50%) scale(1.05)}
-.back-btn:active{transform:translateX(-50%) scale(.95)}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h2>🏆 Pemenang Lomba</h2>
-  <p>Detik SMADI • Karya Terbaik</p>
+  <p>Detik SMADI</p>
 </div>
 
-<!-- CONTENT -->
-<div class="grid">
+<div class="slider" id="slider">
+  <div class="track" id="track">
 
-  <div class="card">
-    <img src="juara1.jpg">
-    <div class="badge gold">JUARA 1</div>
-    <div class="name">Nama Siswa – Kelas</div>
+    <!-- JUARA 1 -->
+    <div class="card">
+      <div class="box gold">
+        <div class="badge">🥇</div>
+        <div class="photo"><img src="juara1.jpg"></div>
+        <div class="rank" style="color:gold">Juara 1</div>
+        <div class="name">Nama Siswa – Kelas</div>
+      </div>
+    </div>
+
+    <!-- JUARA 2 -->
+    <div class="card">
+      <div class="box">
+        <div class="badge">🥈</div>
+        <div class="photo"><img src="juara2.jpg"></div>
+        <div class="rank">Juara 2</div>
+        <div class="name">Nama Siswa – Kelas</div>
+      </div>
+    </div>
+
+    <!-- JUARA 3 -->
+    <div class="card">
+      <div class="box">
+        <div class="badge">🥉</div>
+        <div class="photo"><img src="juara3.jpg"></div>
+        <div class="rank">Juara 3</div>
+        <div class="name">Nama Siswa – Kelas</div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card">
-    <img src="juara2.jpg">
-    <div class="badge silver">JUARA 2</div>
-    <div class="name">Nama Siswa – Kelas</div>
+  <div class="dots" id="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
   </div>
-
-  <div class="card">
-    <img src="juara3.jpg">
-    <div class="badge bronze">JUARA 3</div>
-    <div class="name">Nama Siswa – Kelas</div>
-  </div>
-
 </div>
 
-<!-- BACK -->
 <a href="index.html" class="back-btn">⬅ Kembali</a>
+
+<script>
+let i=0, startX=0;
+const track=document.getElementById('track');
+const dots=[...document.querySelectorAll('.dot')];
+const slider=document.getElementById('slider');
+
+function update(){
+  track.style.transform=`translateX(${-i*100}%)`;
+  dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+}
+
+slider.addEventListener('touchstart',e=>startX=e.touches[0].clientX);
+slider.addEventListener('touchend',e=>{
+  let dx=e.changedTouches[0].clientX-startX;
+  if(dx<-40 && i<2) i++;
+  if(dx>40 && i>0) i--;
+  update();
+});
+</script>
 
 </body>
 </html>
